@@ -54,8 +54,6 @@
   .guideBody p{font-size:14px;color:#aab4c3;flex:1}
   .guideBody a{margin-top:14px;color:#fff;font-weight:900;font-size:13px}
   .guideBody a b{color:#ff6b53}
-  @media(max-width:900px){.cards-grid,.state-grid{grid-template-columns:1fr 1fr!important}}
-  @media(max-width:600px){.trustBadges{justify-content:center}.badge{font-size:10px;padding:6px 10px}}
 </style>
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -158,15 +156,15 @@
   </div>
 </section>
 
-<section style="background:#fff;border-bottom:1px solid #e1ddd4;padding:28px 0" aria-label="Key statistics">
-  <div class="shell" style="display:flex;gap:40px;flex-wrap:wrap;justify-content:center;align-items:center">
-    <div style="text-align:center"><div style="font-family:'Georgia',serif;font-size:2.6rem;color:#d83b26;font-weight:900;line-height:1">5,000+</div><div style="font-size:11px;color:#687386;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-top:4px">People Helped</div></div>
-    <div style="width:1px;height:50px;background:#e1ddd4" aria-hidden="true"></div>
-    <div style="text-align:center"><div style="font-family:'Georgia',serif;font-size:2.6rem;color:#d83b26;font-weight:900;line-height:1">⭐⭐⭐⭐⭐</div><div style="font-size:11px;color:#687386;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-top:4px">5-Star Reviews</div></div>
-    <div style="width:1px;height:50px;background:#e1ddd4" aria-hidden="true"></div>
-    <div style="text-align:center"><div style="font-family:'Georgia',serif;font-size:2.6rem;color:#d83b26;font-weight:900;line-height:1">100%</div><div style="font-size:11px;color:#687386;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-top:4px">Free Consultation</div></div>
-    <div style="width:1px;height:50px;background:#e1ddd4" aria-hidden="true"></div>
-    <div style="text-align:center"><div style="font-family:'Georgia',serif;font-size:2.6rem;color:#d83b26;font-weight:900;line-height:1">24/7</div><div style="font-size:11px;color:#687386;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-top:4px">Case Support</div></div>
+<section class="socialStrip" aria-label="Key statistics">
+  <div class="shell socialStripInner">
+    <div class="socialStat"><div class="socialStatNum">5,000+</div><div class="socialStatLabel">People Helped</div></div>
+    <div class="socialStripDivider" aria-hidden="true"></div>
+    <div class="socialStat"><div class="socialStatNum">⭐⭐⭐⭐⭐</div><div class="socialStatLabel">5-Star Reviews</div></div>
+    <div class="socialStripDivider" aria-hidden="true"></div>
+    <div class="socialStat"><div class="socialStatNum">100%</div><div class="socialStatLabel">Free Consultation</div></div>
+    <div class="socialStripDivider" aria-hidden="true"></div>
+    <div class="socialStat"><div class="socialStatNum">24/7</div><div class="socialStatLabel">Case Support</div></div>
   </div>
 </section>
 
@@ -178,12 +176,12 @@
       <h2>Get a free case review in your state.</h2>
       <p>Our free case review covers accidents in Florida, California, Arizona, Texas, and New York.</p>
     </div>
-    <div class="state-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:40px">
-      <a href="/states/florida/" style="background:#121d2f;border:1px solid #2c384b;border-radius:14px;padding:22px 18px;display:block;text-decoration:none;color:#fff"><div style="font-size:22px;font-weight:900;margin-bottom:4px">🌴 Florida</div><div style="font-size:11px;color:#ff8d76;font-weight:700">FREE CASE REVIEW</div></a>
-      <a href="/states/california/" style="background:#121d2f;border:1px solid #2c384b;border-radius:14px;padding:22px 18px;display:block;text-decoration:none;color:#fff"><div style="font-size:22px;font-weight:900;margin-bottom:4px">🌅 California</div><div style="font-size:11px;color:#ff8d76;font-weight:700">FREE CASE REVIEW</div></a>
-      <a href="/states/arizona/" style="background:#121d2f;border:1px solid #2c384b;border-radius:14px;padding:22px 18px;display:block;text-decoration:none;color:#fff"><div style="font-size:22px;font-weight:900;margin-bottom:4px">🌵 Arizona</div><div style="font-size:11px;color:#ff8d76;font-weight:700">FREE CASE REVIEW</div></a>
-      <a href="/states/texas/" style="background:#121d2f;border:1px solid #2c384b;border-radius:14px;padding:22px 18px;display:block;text-decoration:none;color:#fff"><div style="font-size:22px;font-weight:900;margin-bottom:4px">🤠 Texas</div><div style="font-size:11px;color:#ff8d76;font-weight:700">FREE CASE REVIEW</div></a>
-      <a href="/states/new-york/" style="background:#121d2f;border:1px solid #2c384b;border-radius:14px;padding:22px 18px;display:block;text-decoration:none;color:#fff"><div style="font-size:22px;font-weight:900;margin-bottom:4px">🗽 New York</div><div style="font-size:11px;color:#ff8d76;font-weight:700">FREE CASE REVIEW</div></a>
+    <div class="stateGrid">
+      <a href="/states/florida/"><span class="stateEmoji">🌴 Florida</span><span class="stateCta">FREE CASE REVIEW</span></a>
+      <a href="/states/california/"><span class="stateEmoji">🌅 California</span><span class="stateCta">FREE CASE REVIEW</span></a>
+      <a href="/states/arizona/"><span class="stateEmoji">🌵 Arizona</span><span class="stateCta">FREE CASE REVIEW</span></a>
+      <a href="/states/texas/"><span class="stateEmoji">🤠 Texas</span><span class="stateCta">FREE CASE REVIEW</span></a>
+      <a href="/states/new-york/"><span class="stateEmoji">🗽 New York</span><span class="stateCta">FREE CASE REVIEW</span></a>
     </div>
   </div>
 </section>
