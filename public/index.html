@@ -1,125 +1,249 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Promotion Site — Coming Soon</title>
-<meta name="description" content="A new promotion is on the horizon. Stay tuned." />
-<meta name="theme-color" content="#0B0B0F" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" />
-<style>
-  :root{
-    --bg:#0B0B0F;
-    --gold:#B8963E;
-    --gold-bright:#D4AF37;
-    --cream:#FAF6EE;
-    --ink:#0B0B0F;
-    --muted:#8a8579;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{background:var(--bg);color:var(--cream);font-family:'Inter',system-ui,sans-serif;font-weight:300;line-height:1.8;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-  body{min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
-  .wrap{max-width:880px;margin:0 auto;padding:0 28px;width:100%}
-
-  /* hairline */
-  hr.gold{border:0;height:1px;background:var(--gold);opacity:.55;width:60px;margin:0 auto}
-
-  /* nav */
-  header{position:fixed;top:0;left:0;right:0;z-index:20;padding:22px 0;background:rgba(11,11,15,.7);backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(184,150,62,.18)}
-  nav{display:flex;align-items:center;justify-content:space-between}
-  .brand{display:flex;align-items:center;gap:12px;color:var(--cream);text-decoration:none}
-  .brand-mark{width:30px;height:30px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:500;letter-spacing:.02em}
-  .brand-name{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:.18em;text-transform:uppercase}
-  .nav-links{display:flex;gap:30px}
-  .nav-links a{color:var(--cream);text-decoration:none;font-size:11px;letter-spacing:.3em;text-transform:uppercase;opacity:.7;transition:opacity .2s ease,color .2s ease}
-  .nav-links a:hover{opacity:1;color:var(--gold)}
-
-  /* hero */
-  main{flex:1;display:flex;align-items:center;justify-content:center;padding:160px 0 80px;position:relative}
-  main::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 50% 35%,rgba(184,150,62,.10) 0%,rgba(11,11,15,0) 70%);pointer-events:none}
-  .hero{position:relative;text-align:center}
-  .eyebrow{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:30px}
-  h1{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(2.6rem,6.5vw,5.4rem);line-height:1.05;letter-spacing:-.01em;color:var(--cream);margin-bottom:18px}
-  h1 em{font-style:italic;color:var(--gold-bright);font-weight:500}
-  .lede{max-width:560px;margin:0 auto 42px;color:#c9c4b6;font-size:1.05rem;line-height:1.85}
-  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:54px}
-  .btn{display:inline-flex;align-items:center;gap:12px;padding:16px 28px;border-radius:1px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;transition:all .25s ease;cursor:pointer;border:1px solid transparent;font-family:'Inter',sans-serif;font-weight:400}
-  .btn-primary{background:var(--gold);color:var(--ink);border-color:var(--gold)}
-  .btn-primary:hover{background:var(--gold-bright);border-color:var(--gold-bright);transform:translateY(-1px)}
-  .btn-ghost{background:transparent;color:var(--cream);border-color:rgba(184,150,62,.45)}
-  .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
-  .btn .arrow{display:inline-block;width:18px;height:1px;background:currentColor;position:relative}
-  .btn .arrow::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
-
-  /* stats */
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:680px;margin:0 auto;border-top:1px solid rgba(184,150,62,.35);border-bottom:1px solid rgba(184,150,62,.35);padding:30px 0}
-  .stat{padding:6px 18px;border-right:1px solid rgba(184,150,62,.18);text-align:center}
-  .stat:last-child{border-right:0}
-  .stat-n{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--gold);font-weight:500;line-height:1;letter-spacing:.02em}
-  .stat-l{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:10px}
-
-  /* contact */
-  section#contact{padding:90px 0 120px;text-align:center;border-top:1px solid rgba(184,150,62,.18);position:relative}
-  section#contact .eyebrow{margin-bottom:24px}
-  .email{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--cream);text-decoration:none;letter-spacing:.02em;border-bottom:1px solid var(--gold);padding-bottom:4px;transition:color .2s ease}
-  .email:hover{color:var(--gold-bright)}
-
-  footer{padding:36px 0;text-align:center;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);border-top:1px solid rgba(184,150,62,.18)}
-
-  @media (max-width:600px){
-    .nav-links{display:none}
-    .stats{grid-template-columns:1fr;gap:24px;padding:24px 0}
-    .stat{border-right:0;border-bottom:1px solid rgba(184,150,62,.18);padding:14px 0}
-    .stat:last-child{border-bottom:0}
-    main{padding:130px 0 60px}
-  }
-</style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Florida Accident Case Resources | Florida Crash Guide</title>
+<meta name="description" content="Independent educational resources for Floridians after motor-vehicle accidents, with a direct path to CaseClosedFL's free accident eligibility intake. Not a law firm."/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://promotion-site-tqn7i.ondigitalocean.app/"/>
+<meta property="og:title" content="Florida Accident Case Resources"/>
+<meta property="og:description" content="Practical accident resources and a direct path to CaseClosedFL's free eligibility intake."/>
+<meta property="og:type" content="website"/>
+<link rel="stylesheet" href="/css/site.css"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebSite","name":"Florida Crash Guide","description":"Independent Florida accident education and CaseClosedFL referral resource."},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is CaseClosedFL?","acceptedAnswer":{"@type":"Answer","text":"CaseClosedFL provides a free accident eligibility intake and may help connect eligible people with an attorney. It is not a law firm."}},
+{"@type":"Question","name":"Does checking eligibility cost anything?","acceptedAnswer":{"@type":"Answer","text":"No. The CaseClosedFL eligibility intake is presented as free and without obligation."}}
+]}]}
+</script>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <nav>
-        <a href="#" class="brand">
-          <span class="brand-mark">P</span>
-          <span class="brand-name">Promotion</span>
-        </a>
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
-    </div>
-  </header>
+<header class="nav shell">
+  <a class="brand" href="/"><span>F</span> Florida<span>CrashGuide</span></a>
+  <nav>
+    <a href="#guides">Crash Guides</a>
+    <a href="#cities">Florida Cities</a>
+    <a href="#faq">Questions</a>
+    <a class="navCta" href="https://caseclosedfl.com/?utm_source=caseclosed_promotion&utm_medium=referral&utm_campaign=florida_accident_resources&utm_content=nav" data-placement="nav">Check My Case ↗</a>
+  </nav>
+</header>
 
-  <main>
-    <div class="wrap hero">
-      <div class="eyebrow">A new chapter · Est. 2026</div>
-      <h1>Something <em>extraordinary</em><br/>is on the way.</h1>
-      <p class="lede">A premium promotion is taking shape. Refined, deliberate, and built to last. Be the first to know when the doors open.</p>
-      <div class="cta-row">
-        <a href="#contact" class="btn btn-primary">Get Notified <span class="arrow"></span></a>
-        <a href="#about" class="btn btn-ghost">Learn More</a>
+<section class="hero">
+  <div class="shell heroGrid">
+    <div>
+      <p class="eyebrow">WHAT YOU DO NEXT CAN MATTER</p>
+      <h1>A Florida crash can take <em>seconds.</em><br/>The questions last much longer.</h1>
+      <p class="lead">Get the facts organized before memories fade, records scatter and insurance conversations become harder to reconstruct. Start with practical guidance—then check whether your accident may fit CaseClosedFL's free intake.</p>
+      <div class="actions">
+        <a class="primary" href="https://caseclosedfl.com/?utm_source=caseclosed_promotion&utm_medium=referral&utm_campaign=florida_accident_resources&utm_content=hero" data-placement="hero">Check My Accident Eligibility <b>↗</b></a>
+        <a class="secondary" href="#first-hours">Show me what to save ↓</a>
       </div>
-      <div class="stats">
-        <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Curated</div></div>
-        <div class="stat"><div class="stat-n">24/7</div><div class="stat-l">Coming</div></div>
-        <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Potential</div></div>
+      <div class="trustline">
+        <span>✓ Free eligibility intake</span>
+        <span>✓ No obligation</span>
+        <span>✓ Florida focused</span>
+      </div>
+      <p class="micro">CaseClosedFL is not a law firm. Information here is general education, not legal advice. No result or attorney match is guaranteed.</p>
+    </div>
+    <aside class="crashCard">
+      <div class="scene" role="img" aria-label="Stylized Florida roadway accident scene">
+        <div class="sun"></div>
+        <div class="road"><i></i><i></i><i></i></div>
+        <div class="car one">🚙</div>
+        <div class="car two">🚗</div>
+        <div class="pin">FL</div>
+      </div>
+      <div class="sceneCaption"><b>Before the scene disappears:</b><span>photos · witnesses · documents · timeline</span></div>
+    </aside>
+  </div>
+</section>
+
+<section class="ticker">
+  <div class="shell">
+    <b>DON'T RELY ON MEMORY ALONE</b>
+    <span>Preserve what happened.</span>
+    <span>Understand what may matter.</span>
+    <span>Decide your next step with more information.</span>
+  </div>
+</section>
+
+<section class="section shell" id="first-hours">
+  <p class="eyebrow dark">THE FIRST-HOURS CHECKLIST</p>
+  <div class="sectionHead">
+    <h2>Future-you may need what present-you can still preserve.</h2>
+    <p>Uncertainty creates delay. A short checklist reduces the mental load and gives you something concrete to do while information is still accessible.</p>
+  </div>
+  <div class="checkGrid">
+    <ol>
+      <li><span>01</span><p>Photograph vehicles, plates, road conditions and visible injuries</p></li>
+      <li><span>02</span><p>Save witness names and contact information</p></li>
+      <li><span>03</span><p>Keep medical, towing, repair and insurance records together</p></li>
+      <li><span>04</span><p>Write down what you remember before details fade</p></li>
+      <li><span>05</span><p>Avoid guessing about injuries or fault when you do not know</p></li>
+    </ol>
+    <aside class="nudge">
+      <p class="eyebrow dark">WHY THIS MATTERS</p>
+      <h3>You do not need to decide everything today.</h3>
+      <p>You can preserve information now and decide what to do with it later. The difficult direction is the reverse: trying to recreate missing evidence weeks afterward.</p>
+      <a class="primary" href="https://caseclosedfl.com/?utm_source=caseclosed_promotion&utm_medium=referral&utm_campaign=florida_accident_resources&utm_content=midpage" data-placement="midpage">Check eligibility when ready ↗</a>
+    </aside>
+  </div>
+</section>
+
+<section class="guides" id="guides">
+  <div class="shell">
+    <p class="eyebrow">FIND YOUR SITUATION</p>
+    <div class="sectionHead light">
+      <h2>Different crashes create different questions.</h2>
+      <p>Choose the situation closest to yours. Each guide is built around the information people commonly need to organize—not generic filler.</p>
+    </div>
+    <div class="cards">
+      <article>
+        <div class="cardIcon">🚗</div>
+        <span>GUIDE 01</span>
+        <h3>Car Accidents</h3>
+        <p>The other driver's insurer may call quickly. Get organized before the conversation gets complicated.</p>
+        <a href="/guides/car-accidents.html">Read the guide <b>→</b></a>
+      </article>
+      <article>
+        <div class="cardIcon">🚛</div>
+        <span>GUIDE 02</span>
+        <h3>Truck Accidents</h3>
+        <p>Commercial crashes can involve drivers, carriers, owners and multiple insurance layers.</p>
+        <a href="/guides/truck-accidents.html">Read the guide <b>→</b></a>
+      </article>
+      <article>
+        <div class="cardIcon">📱</div>
+        <span>GUIDE 03</span>
+        <h3>Uber &amp; Lyft Accidents</h3>
+        <p>Coverage can depend on what the rideshare driver was doing in the app at the moment of impact.</p>
+        <a href="/guides/rideshare-accidents.html">Read the guide <b>→</b></a>
+      </article>
+      <article>
+        <div class="cardIcon">🛡️</div>
+        <span>GUIDE 04</span>
+        <h3>Uninsured Drivers</h3>
+        <p>No insurance card does not automatically mean there is no path forward.</p>
+        <a href="/guides/uninsured-drivers.html">Read the guide <b>→</b></a>
+      </article>
+      <article>
+        <div class="cardIcon">🚶</div>
+        <span>GUIDE 05</span>
+        <h3>Pedestrian Accidents</h3>
+        <p>Small details—location, signals, visibility and witnesses—can become important later.</p>
+        <a href="/guides/pedestrian-accidents.html">Read the guide <b>→</b></a>
+      </article>
+      <article>
+        <div class="cardIcon">🏍️</div>
+        <span>GUIDE 06</span>
+        <h3>Motorcycle Accidents</h3>
+        <p>Preserve the scene, gear, medical timeline and witness information while it is still available.</p>
+        <a href="/guides/motorcycle-accidents.html">Read the guide <b>→</b></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section shell" id="cities">
+  <p class="eyebrow dark">LOCAL INTENT, USEFUL ANSWERS</p>
+  <div class="sectionHead">
+    <h2>Florida is not one search market.</h2>
+    <p>City pages create room for genuinely local information: major corridors, local agencies, crash-data sources and questions specific to the area.</p>
+  </div>
+  <div class="cityGrid">
+    <a href="/florida/miami.html"><span>FL</span><b>Miami</b><i>Explore local resources →</i></a>
+    <a href="/florida/fort-lauderdale.html"><span>FL</span><b>Fort Lauderdale</b><i>Explore local resources →</i></a>
+    <a href="/florida/west-palm-beach.html"><span>FL</span><b>West Palm Beach</b><i>Explore local resources →</i></a>
+    <a href="/florida/orlando.html"><span>FL</span><b>Orlando</b><i>Explore local resources →</i></a>
+    <a href="/florida/tampa.html"><span>FL</span><b>Tampa</b><i>Explore local resources →</i></a>
+    <a href="/florida/jacksonville.html"><span>FL</span><b>Jacksonville</b><i>Explore local resources →</i></a>
+  </div>
+</section>
+
+<section class="data">
+  <div class="shell dataGrid">
+    <div>
+      <p class="eyebrow">AUTHORITY SHOULD BE EARNED</p>
+      <h2>Built to cite sources, not manufacture certainty.</h2>
+      <p>Our research pages are designed around primary Florida and federal sources. As the library grows, crash statistics, road-safety information and local datasets should link back to their source and show when they were reviewed.</p>
+      <div class="sourcePills">
+        <a href="https://www.flhsmv.gov/traffic-crash-reports/crash-dashboard/">FLHSMV Crash Dashboard ↗</a>
+        <a href="https://www.nhtsa.gov/">NHTSA ↗</a>
+        <a href="https://www.fdot.gov/">FDOT ↗</a>
       </div>
     </div>
-  </main>
-
-  <section id="contact">
-    <div class="wrap">
-      <div class="eyebrow">Stay in the loop</div>
-      <hr class="gold" style="margin:0 auto 26px"/>
-      <a class="email" href="mailto:hello@promotion-site.example">hello@promotion-site.example</a>
+    <div class="dataVisual">
+      <div><span>SOURCE</span><b>Primary</b></div>
+      <div><span>REVIEW</span><b>Dated</b></div>
+      <div><span>CLAIMS</span><b>Cited</b></div>
+      <div><span>CTA</span><b>Transparent</b></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <div class="wrap">© 2026 Promotion Site · All rights reserved</div>
-  </footer>
+<section class="section shell" id="faq">
+  <p class="eyebrow dark">QUICK ANSWERS</p>
+  <div class="faq">
+    <div>
+      <h2>Questions people ask before they click anything.</h2>
+      <p>Reducing uncertainty is part of conversion. The answer should come before the pitch whenever possible.</p>
+    </div>
+    <div>
+      <details>
+        <summary>What is CaseClosedFL?<span>+</span></summary>
+        <p>CaseClosedFL provides a free accident eligibility intake and may help connect eligible people with an attorney. It is not a law firm.</p>
+      </details>
+      <details>
+        <summary>Does checking eligibility cost anything?<span>+</span></summary>
+        <p>No. The CaseClosedFL eligibility intake is presented as free and without obligation.</p>
+      </details>
+      <details>
+        <summary>Why use this resource site first?<span>+</span></summary>
+        <p>This site is designed to answer practical Florida accident questions before asking you to continue to an intake.</p>
+      </details>
+      <details>
+        <summary>Should I wait before preserving crash information?<span>+</span></summary>
+        <p>Evidence can become harder to recover with time. Preserve documents, photographs, witness details and your own recollection as soon as reasonably possible.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="shell ctaBox">
+    <div>
+      <p class="eyebrow dark">YOU HAVE THE INFORMATION. NOW CHOOSE.</p>
+      <h2>Want to see whether your accident may fit the CaseClosedFL intake?</h2>
+      <p>Continue to CaseClosedFL for its free eligibility screening. This referral is tracked so the promotion channel can be measured instead of guessed.</p>
+    </div>
+    <a class="primary" href="https://caseclosedfl.com/?utm_source=caseclosed_promotion&utm_medium=referral&utm_campaign=florida_accident_resources&utm_content=footer" data-placement="footer">Visit CaseClosedFL <b>↗</b></a>
+  </div>
+</section>
+
+<footer>
+  <div class="shell footer">
+    <div class="brand"><span>F</span> Florida<span>CrashGuide</span></div>
+    <p>Educational promotional property supporting CaseClosedFL. Not a law firm. General information only; not legal advice. No result or attorney match is guaranteed.</p>
+    <a class="footerLink" href="https://caseclosedfl.com/?utm_source=caseclosed_promotion&utm_medium=referral&utm_campaign=florida_accident_resources&utm_content=footer" data-placement="footer">caseclosedfl.com ↗</a>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('[data-placement]').forEach(function(el){
+  el.addEventListener('click', function(){
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'caseclosed_referral_click',
+      destination: 'caseclosedfl.com',
+      placement: el.getAttribute('data-placement'),
+      campaign: 'florida_accident_resources',
+      path: window.location.pathname
+    });
+  });
+});
+</script>
 </body>
 </html>

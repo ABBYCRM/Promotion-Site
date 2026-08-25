@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://promotion-site-tqn7i.ondigitalocean.app/sitemap.xml
